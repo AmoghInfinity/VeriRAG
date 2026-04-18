@@ -1,0 +1,39 @@
+Retrieval-Augmented Generation (RAG) is a technique that combines information retrieval with text generation.
+
+Instead of relying only on a language model's internal knowledge, RAG retrieves relevant documents from an external knowledge base and uses them to generate answers.
+
+A typical RAG system consists of:
+1. Document ingestion (loading and splitting data)
+2. Embedding generation (converting text into vectors)
+3. Vector database (storing embeddings)
+4. Retriever (finding relevant documents)
+5. Generator (LLM producing answer)
+
+The main advantage of RAG is that it reduces hallucination by grounding responses in real data.
+
+However, RAG systems can still produce incorrect answers if:
+- Retrieved documents are irrelevant
+- The model misinterprets context
+- The query is poorly formulated
+
+To address this, advanced systems use self-correction mechanisms such as:
+- Answer verification (grading)
+- Query rewriting
+- Retry loops
+
+This is often referred to as a self-healing RAG system.
+
+In such systems:
+- The answer is evaluated against retrieved documents
+- If the answer is not supported, the query is rewritten
+- The system retries retrieval and generation
+
+Vector databases like ChromaDB, FAISS, and Pinecone are commonly used in RAG systems.
+
+Embeddings are numerical representations of text that capture semantic meaning, enabling similarity search.
+
+RAG is widely used in:
+- Chatbots
+- Question answering systems
+- Enterprise knowledge systems
+- AI assistants
