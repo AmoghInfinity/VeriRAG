@@ -1,117 +1,180 @@
-# VeriRAG
+# 🔍 VeriRAG  
+### Self-Healing Retrieval-Augmented Generation System
 
-VeriRAG is a self-healing Retrieval-Augmented Generation (RAG) system that improves answer reliability through verification, query decomposition, and iterative refinement.
+VeriRAG is an advanced RAG system designed to improve answer reliability through verification, query decomposition, and iterative refinement.
 
-Unlike standard RAG pipelines, VeriRAG can handle multi-intent queries, detect incomplete answers, and automatically retry with improved queries to produce more accurate responses.
-
----
-
-## Key Features
-
-- Multi-intent query handling (automatic query splitting)
-- Self-healing retry mechanism with query rewriting
-- Context-grounded answer generation
-- Lightweight answer verification (grading system)
-- Clean Streamlit interface
-- Modular and extensible architecture
+Unlike traditional RAG pipelines, VeriRAG can handle multi-intent queries, detect incomplete answers, and automatically self-correct using a retry mechanism to generate more accurate and complete responses.
 
 ---
 
-## System Architecture
+## 🚀 Features
 
+### 🧠 Self-Healing RAG Pipeline
+- Iterative retry mechanism for answer improvement  
+- Query rewriting for better retrieval  
+- Automatic correction of incomplete responses  
 
-User Query
-↓
-Query Splitter
-↓
-Retriever → Generator → Grader
-↑ ↓
-Rewriter ← Retry Loop
-↓
-Final Answer (Merged)
+### 🔀 Multi-Intent Query Handling
+- Splits complex queries into sub-queries  
+- Processes each query independently  
+- Merges final answers intelligently  
 
+### 📚 Retrieval-Augmented Generation (RAG)
+- Context-based answer generation  
+- ChromaDB vector database  
+- Sentence-transformer embeddings  
+- Reduced hallucination through grounding  
+
+### ✅ Answer Verification System
+- Rule-based grading (pass/fail)  
+- Detects incomplete or incorrect responses  
+- Triggers retry loop when needed  
+
+### 💻 Minimal & Clean UI
+- Built with Streamlit  
+- Progress-based execution feedback  
+- Focused on final output clarity  
 
 ---
 
-## Project Structure
+## 🏗️ Architecture
 
+User Query  
+↓  
+Query Splitter  
+↓  
+Retriever → Generator → Grader  
+                ↑        ↓  
+            Rewriter ← Retry Loop  
+↓  
+Final Answer (Merged)  
 
+---
+
+## ⚙️ Tech Stack
+
+- LLM: Groq (llama-3.3-70b-versatile)  
+- Framework: LangChain  
+- Embeddings: Sentence Transformers (all-MiniLM-L6-v2)  
+- Vector Database: ChromaDB  
+- Backend: Python  
+- Frontend: Streamlit  
+
+---
+
+## 📁 Project Structure
+
+```
 VeriRAG/
 │
 ├── app/
-│ ├── retriever.py
-│ ├── generator.py
-│ ├── grader.py
-│ ├── rewriter.py
-│ ├── rag_agent.py
-│ └── query_splitter.py
+│   ├── retriever.py
+│   ├── generator.py
+│   ├── grader.py
+│   ├── rewriter.py
+│   ├── rag_agent.py
+│   └── query_splitter.py
 │
 ├── data/
-│ ├── machine_learning.txt
-│ ├── python_basics.txt
-│ └── rag_concepts.txt
+│   ├── machine_learning.txt
+│   ├── python_basics.txt
+│   └── rag_concepts.txt
 │
 ├── ui/
-│ └── dashboard.py
+│   └── dashboard.py
 │
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-
+```
 
 ---
 
-## Installation
+## ▶️ How to Run
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
-git clone https://github.com/your-username/VeriRAG.git
+```
+git clone https://github.com/YOUR_USERNAME/VeriRAG.git
 cd VeriRAG
-### 2. Create a virtual environment
+```
 
+### 2. Create Virtual Environment
+
+```
 python -m venv venv
 venv\Scripts\activate
-### 3. Install dependencies
+```
 
+### 3. Install Dependencies
+
+```
 pip install -r requirements.txt
-### 4. Add API Key
+```
 
-Create a .env file in the root directory:
+### 4. Add Environment Variables
 
+Create a `.env` file:
+
+```
 GROQ_API_KEY=your_api_key_here
+```
 
 ### 5. Run the Application
-streamlit run ui/dashboard.py
 
-## Example Queries
+```
+streamlit run ui/dashboard.py
+```
+
+---
+
+## 🧪 Example Queries
+
+```
 what is machine learning and rag
 python uses and features
 what is rag
-## How It Works
-The system detects multi-intent queries
-It splits the query into sub-queries
-Each sub-query goes through:
-Retrieval (ChromaDB)
-Generation (LLM)
-Verification (Grader)
-If the answer is incomplete:
-Query is rewritten
-System retries
-Final answers are merged and returned
-## Tech Stack
-Python
-LangChain
-Groq LLM API
-ChromaDB
-Sentence Transformers
-Streamlit
-## Current Limitations
-Rule-based query splitting
-Basic grading logic (not semantic)
-No source attribution in UI
-## Future Improvements
-LLM-based query decomposition
-Confidence scoring instead of pass/fail
-Source grounding with citations
-Parallel execution for faster responses
-Cloud deployment
+```
+
+---
+
+## 🧠 Key Highlights
+
+- Handles multi-question queries intelligently  
+- Implements self-healing retry mechanism  
+- Ensures context-grounded responses  
+- Modular architecture for easy extension  
+
+---
+
+## ⚠️ Limitations
+
+- Rule-based query splitting (not semantic yet)  
+- Basic grading logic (non-LLM based)  
+- No source attribution in UI  
+
+---
+
+## 🔮 Future Improvements
+
+- LLM-based query decomposition  
+- Confidence scoring system  
+- Source grounding with citations  
+- Parallel processing for speed  
+- Cloud deployment  
+
+---
+
+## 👨‍💻 Author
+
+Amogh Gupta  
+
+---
+
+## ⭐ Acknowledgements
+
+- Groq API  
+- LangChain  
+- HuggingFace  
+- ChromaDB  
+- Streamlit  
