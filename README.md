@@ -44,15 +44,15 @@ VeriRAG/
 │ ├── grader.py
 │ ├── rewriter.py
 │ ├── rag_agent.py
-│ ├── query_splitter.py
+│ └── query_splitter.py
 │
 ├── data/
 │ ├── machine_learning.txt
 │ ├── python_basics.txt
-│ ├── rag_concepts.txt
+│ └── rag_concepts.txt
 │
 ├── ui/
-│ ├── dashboard.py
+│ └── dashboard.py
 │
 ├── requirements.txt
 ├── .gitignore
@@ -80,7 +80,7 @@ Create a .env file in the root directory:
 
 GROQ_API_KEY=your_api_key_here
 
-### Run the Application
+### 5. Run the Application
 streamlit run ui/dashboard.py
 
 ## Example Queries
